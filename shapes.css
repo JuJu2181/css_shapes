@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    margin: 3em;
+}
+
+.wrapper>div{
+    background: #fadada;
+}
+
+.wrapper>div:nth-child(even){
+    background: #dafdfa;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(10em,auto);
+    grid-auto-columns: minmax(10em,auto);
+    gap: 1em;
+
+}
+
+/* circle */
+.shape1{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* semicircle */
+.shape2{
+    position: relative;
+    height: 50px;
+    width: 100px;
+    /* top left bottom right */
+    border-radius: 50px 50px 0 0;
+    top: 25px;
+}
+
+/*triangle*/
+/*Using border here normally use transparent for side we don't want to display and use color in side we want to display*/
+.shape3{
+    height: 0;
+    width: 0;
+    border-top: 50px solid white !important;
+    border-bottom: 50px solid transparent !important;
+    border-left: 50px solid white !important;
+    border-right: 50px solid transparent !important;
+}
+/*triangle using linear grdient*/
+.shape4{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to bottom left,  #fff 0%, #fff 50%,#dafdfa 50%,#dafdfa 100%) !important;
+}
+/*triangle using conic grdient*/
+.shape5{
+    height: 100px;
+    width: 100px;
+    background: conic-gradient(at 50% 50%,transparent 135deg, #fadada 0, #fadada 225deg, transparent 0) !important;
+}
+
+/* triangle Using clip path* modify source and basic shape */
+.shape6{
+    width: 100px;
+    height: 100px;
+    /* start1,next2,next3,end4*/
+    clip-path: polygon(0% 100%,100% 0%,100% 100%);
+}
+
+/*trapezium using border*/
+.shape7{
+    width: 150px;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid white;
+    border-right: 50px solid white;
+}
+
+/*clippath*/
+.shape8{
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(40% 0%,60% 0%,100% 100%, 0% 100%);
+}
+
+/*Parallelogram*/
+.shape9{
+    height: 100px;
+    width: 100px;
+    transform: skewX(30deg);
+}
+
+/*Hexagon*/
+.shape10{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    clip-path: polygon(25% 0%, 75% 0%,100% 50%,0% 50%,100% 50%,75% 100%, 25% 100%,0% 50%);
+}
